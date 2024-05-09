@@ -12,5 +12,9 @@ public class Counter {
 	public void dec() {
 		value--;
 	}
+	
+	public int getValue() {
+		return value;
+	}
 
 }

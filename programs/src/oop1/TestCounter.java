@@ -9,14 +9,9 @@ public class TestCounter {
 	     
 	     c.inc();
 	     c.inc();
-	     
 	     c.dec();
 	     
-	     //System.out.println(c.value);
-	     
-	     
-	     
-
+	     System.out.println(c.getValue());
 	}
 
 }
