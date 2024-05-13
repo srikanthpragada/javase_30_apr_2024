@@ -4,35 +4,29 @@ class Student {
 	private String name, course;
 	private int feePaid;
 
-	public Student(String n, String c, int f) {
-		name = n;
-		course = c;
-		feePaid = f;
+	public Student(String name, String course) {
+		this.name = name;
+		this.course = course;
 	}
 
-	public Student(String n, String c) {
-		name = n;
-		course = c;
+	public Student(String name, String course, int feePaid) {
+		this(name,course);
+		this.feePaid = feePaid;
 	}
-
-	public Student(String n) {
-		name = n;
-		course = "Java";
-	}
-
+ 
 	public void print() {
-		System.out.println(name);
-		System.out.println(course);
-		System.out.println(feePaid);
+		System.out.println(this.name);
+		System.out.println(this.course);
+		System.out.println(this.feePaid);
 
 	}
 
 	public String getCourse() {
-		return course;
+		return this.course;
 	}
 
 	public int getFeePaid() {
-		return feePaid;
+		return this.feePaid;
 	}
 }
 
