@@ -5,6 +5,8 @@ class Account  {
 	private String ahname;
 	private double balance;
 	
+	private static int minBalance = 5000;
+	
 	public Account(int acno, String ahname) {
 		this.acno = acno;
 		this.ahname = ahname;
@@ -20,11 +22,16 @@ class Account  {
 	}
 	
 	public void withdraw(double amount) {
-		this.balance -= amount;
+		if (this.balance - Account.minBalance >= amount)
+		    this.balance -= amount;
 	}
 	
 	public double getBalance() {
 		return this.balance; 
+	}
+	
+	public static int getMinBalance() {
+		return Account.minBalance;
 	}
 }
 
