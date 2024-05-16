@@ -12,15 +12,15 @@ class Shape {
 		System.out.println(this.x);
 		System.out.println(this.y);
 	}
-	
+
 	public int getX() {
 		return this.x;
 	}
-	
+
 	public int getY() {
 		return this.y;
 	}
-	
+
 }
 
 class Circle extends Shape {
@@ -62,13 +62,45 @@ class Square extends Shape {
 	}
 }
 
+class Rectangle extends Shape {
+	private double length, width;
+
+	public Rectangle(int x, int y, double length, double width) {
+		super(x, y);
+		this.length = length;
+		this.width = width;
+	}
+
+	@Override
+	public void print() {
+		super.print();
+		System.out.println(this.length);
+		System.out.println(this.width);
+	}
+
+	public double getArea() {
+		return this.length * this.width;
+	}
+}
+
 public class TestShapes {
 
 	public static void main(String[] args) {
-		Circle c = new Circle(10, 20, 15);
-		c.print();
-		System.out.println(c.getArea());
-		System.out.println(c.getX());
+		Shape s;
+		s = new Circle(10, 20, 15); // upcasting
+
+		if (s instanceof Circle) {
+			Circle c = (Circle) s; // Downcasting
+		} else {
+			Square sq = (Square) s;
+		}
+		
+		
+		if (s instanceof Circle c1) {
+			System.out.println(c1.getArea());
+		}
+			
+		 
 
 	}
 
