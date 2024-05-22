@@ -22,6 +22,11 @@ class Product {
 		} else
 			return false;
 	}
+
+	@Override
+	public int hashCode() {
+		return this.price;
+	}
 }
 
 public class TestProduct {
